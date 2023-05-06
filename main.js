@@ -20,7 +20,7 @@ function resetBtnFunc() {
   winLose(() => {});
 }
 
-// 유저가 낼 가위바위보
+// 유저가 낼 가위바위 보
 function user() {
   const randomNum = comRandom();
 
