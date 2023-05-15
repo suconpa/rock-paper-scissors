@@ -102,10 +102,10 @@ function countTop(value) {
   if (value) {
     countNum--;
     count.textContent = countNum;
-    if (countNum === 0) {
-      const winner = playerNum > comNum ? "Player 승!" : "Com 승!";
-      alert(winner);
+    if (countNum < 0) {
+      const winner = playerNum > comNum ? `Player 승!` : "Com 승!";
       resetBtnFunc();
+      alert(winner);
     }
   }
 }
