@@ -24,6 +24,10 @@ function resetBtnFunc() {
     item.classList.remove("off");
     resetBtn.classList.remove("active");
   });
+  const picture = (document.querySelector(".picture").innerHTML = `
+  <img src="./img/move.gif" alt="" />
+  <img src="./img/move.gif" alt="" />
+  `);
 }
 
 // 유저가 낼 가위바위 보
