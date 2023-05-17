@@ -162,3 +162,18 @@
   color: #fff;
   margin: 10px;
 }
+
+.sA-container .btn-wrap button.off {
+  background-color: #5f5f5f;
+}
+
+@keyframes blink-effect {
+  50% {
+    opacity: 0;
+  }
+}
+
+.sA-body .btn-reset.active {
+  animation: blink-effect 1s step-end infinite;
+  background-color: #fbb041;
+}

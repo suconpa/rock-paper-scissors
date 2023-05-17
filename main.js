@@ -1,5 +1,6 @@
 const btnWrap = document.querySelector(".btn-wrap");
 btnWrap.addEventListener("click", user);
+const btnWrap2 = document.querySelectorAll(".btn-wrap button"); // 개별 클릭버튼
 
 let countNum = 10; // 남은기회 숫자
 let playerNum = 0; //플레이어가 이긴숫자
@@ -18,6 +19,11 @@ function resetBtnFunc() {
   userNum = 0; // 컴퓨터가 낼 랜덤 숫자저장
   count.textContent = countNum;
   winLose(() => {});
+  btnWrap2.forEach((item) => {
+    item.disabled = false;
+    item.classList.remove("off");
+    resetBtn.classList.remove("active");
+  });
 }
 
 // 유저가 낼 가위바위 보
@@ -102,10 +108,24 @@ function countTop(value) {
   if (value) {
     countNum--;
     count.textContent = countNum;
-    if (countNum < 0) {
-      const winner = playerNum > comNum ? `Player 승!` : "Com 승!";
-      resetBtnFunc();
-      alert(winner);
+    if (countNum === 0) {
+      const winner =
+        playerNum === comNum
+          ? "비김"
+          : playerNum > comNum
+          ? "Player 승!"
+          : "Com 승!";
+      btnWrap2.forEach((item) => {
+        item.disabled = true;
+        item.classList.add("off");
+      });
+
+      resetBtn.classList.add("active"); //깜빡이는 애니메이션
+
+      // resetBtnFunc();
+      setTimeout(() => {
+        alert(winner);
+      }, 1000);
     }
   }
 }
