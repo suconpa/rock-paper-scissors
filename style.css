@@ -177,3 +177,8 @@
   animation: blink-effect 1s step-end infinite;
   background-color: #fbb041;
 }
+
+.sA-container .btn-wrap button.off:active,
+.sA-container .btn-wrap button.off {
+  box-shadow: none;
+}
